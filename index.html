@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bolormaa Uuganbayar — Data Analyst and BI Professional">
+  <title>Bolormaa Uuganbayar | Data Analyst & BI</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, Arial, sans-serif;
+      color: #17233c;
+      background: #f8f9fc;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #e8ebf2;
+    }
+
+    .nav-inner {
+      height: 70px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+      color: #1c315f;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: #d66b91;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(circle at 85% 20%, #f9d9e5 0, transparent 28%),
+        radial-gradient(circle at 10% 80%, #dce7fa 0, transparent 30%),
+        #f8f9fc;
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 7px 15px;
+      border-radius: 30px;
+      background: #f4d8e3;
+      color: #8d4160;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .5px;
+    }
+
+    h1 {
+      font-size: clamp(48px, 8vw, 82px);
+      line-height: 1.05;
+      letter-spacing: -3px;
+      color: #172a50;
+      margin-bottom: 25px;
+    }
+
+    .hero p {
+      max-width: 680px;
+      font-size: 20px;
+      color: #58647a;
+      margin-bottom: 35px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 9px;
+      font-weight: 700;
+      font-size: 14px;
+      transition: .2s;
+    }
+
+    .btn-primary {
+      background: #1c315f;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: #243e75;
+    }
+
+    .btn-secondary {
+      border: 1px solid #ccd3e0;
+      background: white;
+      color: #1c315f;
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      border-color: #d66b91;
+    }
+
+    /* GENERAL */
+
+    section {
+      padding: 95px 0;
+    }
+
+    .section-title {
+      font-size: 38px;
+      color: #172a50;
+      margin-bottom: 12px;
+      letter-spacing: -1px;
+    }
+
+    .section-subtitle {
+      color: #69758a;
+      margin-bottom: 45px;
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .about-highlight {
+      padding: 28px;
+      border-radius: 16px;
+      background: white;
+      border: 1px solid #e5e9f1;
+      box-shadow: 0 10px 35px rgba(30,50,90,.05);
+    }
+
+    .about-highlight h3 {
+      margin-bottom: 12px;
+      color: #1c315f;
+    }
+
+    .about-text {
+      color: #59657a;
+    }
+
+    /* EXPERIENCE */
+
+    .experience {
+      background: white;
+    }
+
+    .timeline {
+      border-left: 2px solid #e5d1da;
+      padding-left: 35px;
+    }
+
+    .job {
+      position: relative;
+      margin-bottom: 48px;
+    }
+
+    .job::before {
+      content: "";
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #d66b91;
+      left: -42px;
+      top: 8px;
+    }
+
+    .job h3 {
+      font-size: 23px;
+      color: #1c315f;
+    }
+
+    .company {
+      font-weight: 700;
+      color: #d66b91;
+      margin-bottom: 3px;
+    }
+
+    .date {
+      font-size: 13px;
+      color: #8a94a6;
+      margin-bottom: 15px;
+    }
+
+    .job ul {
+      padding-left: 20px;
+      color: #5b667a;
+    }
+
+    .job li {
+      margin-bottom: 8px;
+    }
+
+    /* PROJECTS */
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .project {
+      padding: 30px;
+      background: white;
+      border: 1px solid #e4e8f0;
+      border-radius: 16px;
+      transition: .2s;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(30,50,90,.08);
+    }
+
+    .project-number {
+      font-size: 13px;
+      color: #d66b91;
+      font-weight: 800;
+      margin-bottom: 15px;
+    }
+
+    .project h3 {
+      color: #1c315f;
+      margin-bottom: 10px;
+    }
+
+    .project p {
+      color: #647086;
+      font-size: 15px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      padding: 5px 10px;
+      border-radius: 20px;
+      background: #f1f4f9;
+      color: #59667c;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    /* SKILLS */
+
+    .skills {
+      background: white;
+    }
+
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .skill-card {
+      padding: 25px;
+      border: 1px solid #e5e9f0;
+      border-radius: 14px;
+      background: #fafbfe;
+    }
+
+    .skill-card h3 {
+      font-size: 17px;
+      margin-bottom: 12px;
+      color: #1c315f;
+    }
+
+    .skill-card p {
+      color: #68748a;
+      font-size: 14px;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      text-align: center;
+      background: #172a50;
+      color: white;
+    }
+
+    .contact .section-title {
+      color: white;
+    }
+
+    .contact .section-subtitle {
+      color: #cbd4e5;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .contact-links a {
+      padding: 12px 20px;
+      border: 1px solid #657493;
+      border-radius: 8px;
+      color: white;
+      font-weight: 600;
+    }
+
+    .contact-links a:hover {
+      background: white;
+      color: #172a50;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 25px;
+      text-align: center;
+      background: #101d38;
+      color: #9ca8bd;
+      font-size: 13px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 750px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: 560px;
+      }
+
+      h1 {
+        font-size: 52px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      .about-grid,
+      .project-grid,
+      .skill-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-grid {
+        gap: 30px;
+      }
+
+      section {
+        padding: 70px 0;
+      }
+
+      .section-title {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="container nav-inner">
+      <a href="#" class="logo">BU.</a>
+
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container">
+      <div class="hero-content">
+
+        <span class="eyebrow">DATA ANALYST · BI · BUSINESS ANALYTICS</span>
+
+        <h1>Turning data into business insight.</h1>
+
+        <p>
+          I'm Bolormaa Uuganbayar, a Data Analyst and BI professional
+          focused on transforming complex data into meaningful insights,
+          analytical solutions, and better business decisions.
+        </p>
+
+        <div class="buttons">
+          <a href="#projects" class="btn btn-primary">
+            View My Work
+          </a>
+
+          <a href="https://github.com/ublrma" target="_blank"
+             class="btn btn-secondary">
+            GitHub
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+
+      <div class="about-grid">
+
+        <div>
+          <h2 class="section-title">About Me</h2>
+
+          <p class="section-subtitle">
+            Data Analyst · BI Professional · Business Analytics
+          </p>
+        </div>
+
+        <div class="about-text">
+
+          <p>
+            I am a Data Analyst and BI professional with experience in
+            business, product, customer, sales, HR, and operations analytics.
+          </p>
+
+          <br>
+
+          <p>
+            My work focuses on SQL, Power BI, Tableau, Excel, data modeling,
+            KPI development, dashboard development, reporting automation,
+            customer analytics, and data-driven decision-making.
+          </p>
+
+          <br>
+
+          <p>
+            I enjoy translating business questions into measurable KPIs,
+            analytical solutions, dashboards, and actionable insights.
+            I am particularly interested in Business Intelligence,
+            Product Analytics, Customer Analytics, Digital Products,
+            Process Automation, and AI-assisted analytics.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="experience">
+    <div class="container">
+
+      <h2 class="section-title">Experience</h2>
+
+      <p class="section-subtitle">
+        Professional experience across business intelligence,
+        customer analytics, operations, and education analytics.
+      </p>
+
+      <div class="timeline">
+
+        <!-- ZANGIA -->
+        <div class="job">
+
+          <h3>Data Analyst</h3>
+
+          <div class="company">
+            Zangia Portal LLC
+          </div>
+
+          <div class="date">
+            Jan 2026 — Present
+          </div>
+
+          <ul>
+            <li>
+              Developed Power BI dashboards and SQL-based analytical
+              solutions for sales, customer behavior, membership,
+              renewals, transactions, and business performance.
+            </li>
+
+            <li>
+              Analyzed customer lifecycle, membership utilization,
+              renewals, churn, package movement, discounts, and
+              transaction behavior.
+            </li>
+
+            <li>
+              Designed KPI frameworks, metric definitions, data models,
+              dashboard structures, and analytical solutions.
+            </li>
+
+            <li>
+              Performed customer segmentation, cohort analysis,
+              retention analysis, lifecycle analysis, and trend analysis.
+            </li>
+
+            <li>
+              Developed analytical logic for renewal forecasting,
+              customer risk segmentation, membership movement,
+              and business performance monitoring.
+            </li>
+
+            <li>
+              Used SQL to integrate, transform, validate, and analyze
+              membership, company, job, CRM, sales, and transaction data.
+            </li>
+          </ul>
+
+        </div>
+
+
+        <!-- OYU TOLGOI -->
+        <div class="job">
+
+          <h3>BI and Data Professional</h3>
+
+          <div class="company">
+            Oyu Tolgoi
+          </div>
+
+          <div class="date">
+            Jan 2025 — Dec 2025
+          </div>
+
+          <ul>
+            <li>
+              Developed and maintained 17 Power BI reports for
+              warehouse inbound and logistics operations.
+            </li>
+
+            <li>
+              Built Power BI dashboards for IT, HR, and operations
+              using Microsoft SQL Server.
+            </li>
+
+            <li>
+              Developed reporting and automation workflows using
+              SQL, EasyMorph, Power Apps, and Power Automate.
+            </li>
+
+            <li>
+              Translated business requirements into data models,
+              KPIs, dashboards, reporting solutions, and documentation.
+            </li>
+
+            <li>
+              Supported ETL, data transformation, data validation,
+              UAT, and data quality processes.
+            </li>
+
+            <li>
+              Prepared High-Level Design and Low-Level Design
+              documentation for BI and reporting solutions.
+            </li>
+          </ul>
+
+        </div>
+
+
+        <!-- NOVELSOFT -->
+        <div class="job">
+
+          <h3>Data Analyst</h3>
+
+          <div class="company">
+            Novelsoft
+          </div>
+
+          <div class="date">
+            2024 — 2025
+          </div>
+
+          <ul>
+            <li>
+              Designed and developed Tableau dashboards and analytical
+              reports for education-sector performance monitoring.
+            </li>
+
+            <li>
+              Analyzed student attendance, academic performance,
+              teachers, schools, staffing capacity, and resource utilization.
+            </li>
+
+            <li>
+              Developed KPIs and analytical views to monitor operational
+              performance, capacity, trends, and changes over time.
+            </li>
+
+            <li>
+              Performed data preparation, validation, exploratory analysis,
+              and trend analysis.
+            </li>
+
+            <li>
+              Developed dashboard mockups and translated stakeholder
+              requirements into measurable metrics and analytical solutions.
+            </li>
+
+            <li>
+              Supported UAT, documentation, user guides, and reporting
+              solution improvements.
+            </li>
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="container">
+
+      <h2 class="section-title">Selected Projects</h2>
+
+      <p class="section-subtitle">
+        Examples of analytical problems and BI solutions.
+      </p>
+
+      <div class="project-grid">
+
+        <div class="project">
+
+          <div class="project-number">01 / CUSTOMER ANALYTICS</div>
+
+          <h3>Membership & Customer Lifecycle Analytics</h3>
+
+          <p>
+            Analytical solution for monitoring membership lifecycle,
+            renewal behavior, retention, package movement, customer
+            risk, and renewal forecasting.
+          </p>
+
+          <div class="tags">
+            <span class="tag">Power BI</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Customer Analytics</span>
+            <span class="tag">Forecasting</span>
+          </div>
+
+        </div>
+
+
+        <div class="project">
+
+          <div class="project-number">02 / BUSINESS ANALYTICS</div>
+
+          <h3>Business & Product Performance Analytics</h3>
+
+          <p>
+            Dashboard and analytical framework for evaluating sales,
+            transactions, customer behavior, product performance,
+            KPIs, and business trends.
+          </p>
+
+          <div class="tags">
+            <span class="tag">Power BI</span>
+            <span class="tag">SQL</span>
+            <span class="tag">KPI</span>
+            <span class="tag">Business Analytics</span>
+          </div>
+
+        </div>
+
+
+        <div class="project">
+
+          <div class="project-number">03 / OPERATIONS</div>
+
+          <h3>Warehouse & Inbound Logistics Analytics</h3>
+
+          <p>
+            Operational reporting solution covering warehouse inbound
+            and logistics processes with 17 Power BI reports and
+            automated reporting workflows.
+          </p>
+
+          <div class="tags">
+            <span class="tag">Power BI</span>
+            <span class="tag">SQL Server</span>
+            <span class="tag">EasyMorph</span>
+            <span class="tag">Automation</span>
+          </div>
+
+        </div>
+
+
+        <div class="project">
+
+          <div class="project-number">04 / EDUCATION ANALYTICS</div>
+
+          <h3>Education Analytics Dashboard</h3>
+
+          <p>
+            Tableau-based analytical reporting for student attendance,
+            academic performance, teacher capacity, school capacity,
+            and education-sector performance.
+          </p>
+
+          <div class="tags">
+            <span class="tag">Tableau</span>
+            <span class="tag">Data Analysis</span>
+            <span class="tag">KPI</span>
+            <span class="tag">Visualization</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- SKILLS -->
+  <section id="skills" class="skills">
+    <div class="container">
+
+      <h2 class="section-title">Skills</h2>
+
+      <p class="section-subtitle">
+        Technical and analytical capabilities.
+      </p>
+
+      <div class="skill-grid">
+
+        <div class="skill-card">
+          <h3>Data & BI</h3>
+          <p>
+            Power BI · Tableau · SQL · Microsoft SQL Server · Excel ·
+            Data Analysis · Business Intelligence · Data Visualization
+          </p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Business Analytics</h3>
+          <p>
+            Product Analytics · Customer Analytics · KPI Development ·
+            Segmentation · Cohort Analysis · Retention · Forecasting
+          </p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Data Management</h3>
+          <p>
+            Data Modeling · Data Validation · Data Quality · ETL ·
+            Data Transformation · Data Integration
+          </p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Automation</h3>
+          <p>
+            Power Apps · Power Automate · EasyMorph · Process Automation ·
+            Reporting Automation
+          </p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Solution Design</h3>
+          <p>
+            Business Requirements · Solution Design · UAT · HLD · LLD ·
+            Dashboard Architecture
+          </p>
+        </div>
+
+        <div class="skill-card">
+          <h3>AI & Advanced Analytics</h3>
+          <p>
+            AI-Assisted Analytics · Generative AI · Prompt Engineering ·
+            AI-Assisted Business Analysis · Predictive Analytics Fundamentals
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+
+    <div class="container">
+
+      <h2 class="section-title">
+        Let's connect.
+      </h2>
+
+      <p class="section-subtitle">
+        Interested in Data Analytics, Business Intelligence,
+        Product Analytics, or digital solutions?
+      </p>
+
+      <div class="contact-links">
+
+        <a href="mailto:bolormaa7800@gmail.com">
+          Email
+        </a>
+
+        <a href="https://github.com/ublrma" target="_blank">
+          GitHub
+        </a>
+
+        <a href="https://www.linkedin.com/in/blrmau/" target="_blank">
+          LinkedIn
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Bolormaa Uuganbayar · Data Analyst & BI Professional
+  </footer>
+
+</body>
+</html>
